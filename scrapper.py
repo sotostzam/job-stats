@@ -1,9 +1,9 @@
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from bs4 import BeautifulSoup
 import time
 
-SCROLL_TIMEOUT = 1.5
+SCROLL_TIMEOUT = 2
 
 class WebDriver:
     '''
@@ -11,62 +11,69 @@ class WebDriver:
     '''
     def __init__(self):
         self.options = webdriver.EdgeOptions()
-        #self.options.add_argument("headless") #TODO Include this to make browser not appear
+        self.options.add_argument("headless") #TODO Include this to make browser not appear
         self.options.add_argument('--ignore-certificate-errors')
         self.options.add_experimental_option('excludeSwitches', ['enable-logging'])
         self.driver = webdriver.Edge(options=self.options)
 
-    def login(self, url, username, password):
-        self.driver.get(url)
-        username_field = self.driver.find_element(By.ID, "username")
-        username_field.send_keys(username)
-        password_field = self.driver.find_element(By.ID, "password")
-        password_field.send_keys(password)
-        self.driver.find_element(By.CLASS_NAME, "login__form_action_container").click()
+    def scrap_website(self, url: str):
+        '''
+        Documentation missing
+        '''
 
-    def scroll_to_infinity(self):
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        def get_num_jobs() -> int:
+            return len(self.driver.find_elements(By.XPATH, "//ul[@class='jobs-search__results-list']/li"))
 
-    def scrap_website(self, url):
-        tp = 0
+        def infinite_scroll() -> bool:
+            # Get scroll height
+            last_height = self.driver.execute_script("return document.body.scrollHeight")
 
-        self.driver.get(url)
-        #time.sleep(10) #TODO This should be removed to allow for content to be loaded in a dynamic way
-
-        # Get scroll height
-        last_height = self.driver.execute_script("return document.body.scrollHeight")
-
-        while True:
-            self.scroll_to_infinity()
+            infinite_scroller_btn = self.driver.find_elements(By.CLASS_NAME, "infinite-scroller__show-more-button--visible")
+            if infinite_scroller_btn:
+                infinite_scroller_btn[0].click()
+            self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(SCROLL_TIMEOUT)
 
             # Calculate new scroll height and compare with last scroll height
             new_height = self.driver.execute_script("return document.body.scrollHeight")
-            try:
-                self.driver.find_element(By.CLASS_NAME, "infinite-scroller__show-more-button").click()
-                if new_height == last_height:
-                    break
-                last_height = new_height
-                print("Pressed load more jobs!")
-            except:
-                pass
+            if new_height == last_height:
+                return False
+            last_height = new_height
 
-        page_source = self.driver.page_source
-        
-        content = BeautifulSoup(page_source, 'html.parser')
-        jobs = []
-        job_selector = content.find_all('div', class_='job-search-card')
-        for job in job_selector:
-            titles = job.find_all('div', class_='base-search-card__info')
-            for title in titles:
-                title_job = title.find('h3', 'base-search-card__title').get_text()
-                title_job = title_job.strip()
-                jobs.append(title_job)
-        print(jobs)
-        print(f"Number of jobs found: {len(jobs)}")
+            return True
+
+        self.driver.get(url)
+        #time.sleep(10) #TODO This should be removed to allow for content to be loaded in a dynamic way
+
+        # Number of initially loaded jobs
+        job_listings = get_num_jobs()
+        current_job_index = 1
+        exceptions = []
+
+        print('# Jobs:', str(job_listings))
+
+        while True:
+            for _ in range(current_job_index, job_listings):
+                try:
+                    el_path = f'//*[@id="main-content"]/section[@class="two-pane-serp-page__results-list"]/ul/li[{current_job_index}]/div/div[@class="base-search-card__info"]/h3'
+                    element = self.driver.find_element(By.XPATH, el_path)
+                    current_job_index += 1
+                    #self.driver.find_element(By.XPATH, f'//*[@id="main-content"]/section[@class="two-pane-serp-page__results-list"]/ul/li[{current_job_index}]/div').click()
+                    #time.sleep(1)
+                    print(f'Job number #{current_job_index}:', element.text.lower())
+                except Exception:
+                    exceptions.append(current_job_index)
+                    current_job_index += 1
+            if not infinite_scroll():
+                break
+            job_listings = get_num_jobs()
+            print(job_listings)
+
+        print(f"Exceptions found ({len(exceptions)}): {exceptions}")
+        print(f"Number of jobs found: {get_num_jobs()}")
     
 if __name__ == "__main__":
-    url = "https://www.linkedin.com/jobs/search/?currentJobId=3330508315&distance=5&geoId=103077496&keywords=Data%20Scientist&location=Athens%2C%20Attiki%2C%20Greece&refresh=true"
+    url = "https://www.linkedin.com/jobs/search/?currentJobId=3330508315&distance=10&geoId=103077496&keywords=Data%20Scientist&location=Athens%2C%20Attiki%2C%20Greece&refresh=true"
 
     wd = WebDriver()
 

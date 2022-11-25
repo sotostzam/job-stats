@@ -16,6 +16,6 @@ class MongoDB:
 
     def insert_many(self, collection):
         try:
-            self.db.jobs.insert_many(collection)
+            self.db.jobs.insert_many(collection, ordered=False)
         except DuplicateKeyError as e:
             print(f'Duplicate error: {e}')

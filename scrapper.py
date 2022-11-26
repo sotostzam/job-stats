@@ -5,8 +5,9 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-from datetime import date
+from datetime import datetime
 from db import MongoDB
+import re
 
 TIMEOUT = 2
 
@@ -53,6 +54,25 @@ class LinkedInScrapper:
 
         return True
 
+    def filter_job(self, job_role):
+
+        re_matches = {'Data Scientist': [r'.*[Dd]ata.?[Ss]cien.*'],
+                      'Data Analyst':   [r'.*[Dd]ata.?[Aa]nalyst.*'],
+                      'ML Engineer':    [r'.*[Mm]achine.?[Ll]earning.*',
+                                         r'.*[Mm][Ll].?[Ee]ngineer.*'],
+                      'Deep Learning':  [r'.*[Dd]eep.?[Ll]earning.*'],
+                      'AI Engineer':    [r'.*[Aa]rtificial.?[Ii]ntelligence.*',
+                                         r'.*[Aa].?[Ii].*'],
+                      'MLOps':          [r'.*[Mm][Ll].?[Oo]ps']}
+
+        roles = []
+        for role in re_matches:
+            for reg_ex in re_matches[role]:
+                if re.search(reg_ex, job_role) != None:
+                    roles.append(role)
+        print(f'{job_role}: {roles}')
+        return roles
+
     def load_job_listings(self, url: str):
         '''
         Documentation missing
@@ -62,21 +82,24 @@ class LinkedInScrapper:
         self.driver.get(url)
 
         # Number of initially loaded jobs
-        current_job_index = 1
+        current_job_index = 0
         exceptions = []
 
         while True:
             job_listings = len(self.driver.find_elements(By.XPATH, "//ul[@class='jobs-search__results-list']/li"))
 
             for _ in range(current_job_index, job_listings):
+                current_job_index += 1
                 try:
                     job_path = f'//*[@id="main-content"]/section[@class="two-pane-serp-page__results-list"]/ul/li[{current_job_index}]/div'
+                    job_roles = self.filter_job(self.driver.find_element(By.XPATH, job_path + '/div[2]/h3').text)
+                    if len(job_roles) == 0:
+                        continue
                     job_url = self.driver.find_element(By.XPATH, job_path + '/a').get_attribute('href')
                     job_id = self.driver.find_element(By.XPATH, job_path).get_attribute('data-entity-urn').split(":")[-1]
-                    self.job_links.append((job_url, job_id))
+                    self.job_links.append((job_url, job_id, job_roles))
                 except Exception:
                     exceptions.append(current_job_index)
-                current_job_index += 1
 
             #TODO Check if loading more jobs means less accuracy
             if current_job_index >= 50:
@@ -93,7 +116,7 @@ class LinkedInScrapper:
         jobs = []
 
         for job_record in self.job_links:
-            job_url, job_id = job_record
+            job_url, job_id, job_roles = job_record
             job = {}
             self.driver.get(job_url)
             time.sleep(TIMEOUT)
@@ -102,6 +125,7 @@ class LinkedInScrapper:
                 job['id']       = int(job_id)
                 job['url']      = job_url
                 job['title']    = self.driver.find_element(By.XPATH, job_info_section + '/h1').text
+                job['roles']    = job_roles
                 job['company']  = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[1]/span[1]').text
                 job['location'] = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[1]/span[2]').text
                 
@@ -122,7 +146,7 @@ class LinkedInScrapper:
                 
                 job['published']     = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[2]/span[1]').text
                 job['description']   = self.driver.find_element(By.ID, 'job-details').text
-                job['date_inserted'] = date.today().strftime("%d/%m/%Y")
+                job['date_inserted'] = datetime.utcnow()
 
                 jobs.append(job)
                 print(f'Jobs parsed: {len(jobs)}')

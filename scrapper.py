@@ -1,7 +1,7 @@
 import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
@@ -9,7 +9,7 @@ from datetime import datetime
 from db import MongoDB
 import re
 
-TIMEOUT = 2
+TIMEOUT = 2.5
 
 class LinkedInScrapper:
     '''
@@ -27,14 +27,20 @@ class LinkedInScrapper:
         self.driver = webdriver.Edge(options=self.options)
         self.db = MongoDB()
 
-    def login(self, username, password):
+    def login(self, username: str, password: str) -> bool:
         self.driver.get("https://www.linkedin.com/")
         WebDriverWait(self.driver,5).until(EC.visibility_of_all_elements_located((By.ID,"session_key")))
         self.driver.find_element(By.ID, 'session_key').send_keys(username)
         self.driver.find_element(By.ID, 'session_password').send_keys(password)
         self.driver.find_element(By.CLASS_NAME, "sign-in-form__submit-button").click()
-        WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.ID, "global-nav")))
-        print("Login was successful.")
+        try:
+            print('Attempting login phase...')
+            WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.ID, "global-nav")))
+            print("Login was successful.")
+        except TimeoutException:
+            print('Login failed.')
+            return False
+        return True
 
     def infinite_scroll(self) -> bool:
         # Get scroll height
@@ -62,7 +68,7 @@ class LinkedInScrapper:
                                          r'.*[Mm][Ll].?[Ee]ngineer.*'],
                       'Deep Learning':  [r'.*[Dd]eep.?[Ll]earning.*'],
                       'AI Engineer':    [r'.*[Aa]rtificial.?[Ii]ntelligence.*',
-                                         r'.*[Aa].?[Ii].*'],
+                                         r'(?:^|(?<=[\s]))\(?[Aa][Ii]\)?(?=[\s]|$)'],
                       'MLOps':          [r'.*[Mm][Ll].?[Oo]ps']}
 
         roles = []
@@ -70,20 +76,20 @@ class LinkedInScrapper:
             for reg_ex in re_matches[role]:
                 if re.search(reg_ex, job_role) != None:
                     roles.append(role)
-        print(f'{job_role}: {roles}')
         return roles
 
     def load_job_listings(self, url: str):
         '''
         Documentation missing
         '''
+        print('Gathering job posts. Please wait...\n')
 
         self.job_links = []
         self.driver.get(url)
 
         # Number of initially loaded jobs
         current_job_index = 0
-        exceptions = []
+        exceptions = 0
 
         while True:
             job_listings = len(self.driver.find_elements(By.XPATH, "//ul[@class='jobs-search__results-list']/li"))
@@ -98,22 +104,23 @@ class LinkedInScrapper:
                     job_url = self.driver.find_element(By.XPATH, job_path + '/a').get_attribute('href')
                     job_id = self.driver.find_element(By.XPATH, job_path).get_attribute('data-entity-urn').split(":")[-1]
                     self.job_links.append((job_url, job_id, job_roles))
-                except Exception:
-                    exceptions.append(current_job_index)
+                except NoSuchElementException as e:
+                    print(e)
+                    exceptions += 1
 
             #TODO Check if loading more jobs means less accuracy
-            if current_job_index >= 50:
+            if current_job_index >= 500:
                 break
 
             if not self.infinite_scroll():
                 break
 
-        print(f"Exceptions found ({len(exceptions)}): {exceptions}")
-        print(f"Number of jobs gathered: {len(self.job_links)}")
+        print(f"Number of corrupted links found: {exceptions}")
+        print(f"Number of matched jobs gathered: {len(self.job_links)}/{current_job_index}\n")
 
     def get_job_data(self):
+        print('Scrapping job data...')
         job_info_section = f'//div[@role="main"]/div[1]/div/div/div[1]'
-        jobs = []
 
         for job_record in self.job_links:
             job_url, job_id, job_roles = job_record
@@ -145,16 +152,13 @@ class LinkedInScrapper:
                     pass
                 
                 job['published']     = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[2]/span[1]').text
-                job['description']   = self.driver.find_element(By.ID, 'job-details').text
+                job['description']   = self.driver.find_element(By.XPATH, f'//div[@role="main"]/section/div[1]/div').text
                 job['date_inserted'] = datetime.utcnow()
 
-                jobs.append(job)
-                print(f'Jobs parsed: {len(jobs)}')
+                self.db.insert_document(job)
 
             except NoSuchElementException as e:
                 print('Exception finding title in url:', job_url, e.msg)
-
-        self.db.insert_many(jobs)
     
 if __name__ == "__main__":
     url = "https://www.linkedin.com/jobs/search/?currentJobId=3330508315&distance=10&geoId=103077496&keywords=Data%20Scientist&location=Athens%2C%20Attiki%2C%20Greece&refresh=true"
@@ -166,6 +170,7 @@ if __name__ == "__main__":
 
     wd.load_job_listings(url)
 
-    wd.login(creds['username'], creds['password'])
-
-    wd.get_job_data()
+    if wd.login(creds['username'], creds['password']):
+        wd.get_job_data()
+    else:
+        print('Error.')

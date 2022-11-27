@@ -1,12 +1,12 @@
-import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time
 from datetime import datetime
-from db import MongoDB
+from database import MongoDB
+import time
+import json
 import re
 
 TIMEOUT = 2.5
@@ -17,7 +17,7 @@ class LinkedInScrapper:
     '''
     def __init__(self):
         self.options = webdriver.EdgeOptions()
-        self.options.add_argument("headless") #TODO Include this to make browser not appear
+        self.options.add_argument("headless")
         self.options.add_argument('--ignore-certificate-errors')
         self.options.add_argument("--start-maximized")
         self.options.add_argument("--disable-gpu")
@@ -165,7 +165,7 @@ if __name__ == "__main__":
 
     with open("credentials.json",'r') as secrets:
         creds = json.load(secrets)
-    
+
     wd = LinkedInScrapper()
 
     wd.load_job_listings(url)

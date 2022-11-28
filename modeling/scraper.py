@@ -137,7 +137,7 @@ class LinkedInScrapper:
                 job['location'] = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[1]/span[2]').text
                 
                 job_type = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/ul/li[1]/span').text.split(" · ")
-                job["type"]  = job_type[0]
+                job["type"] = job_type[0]
                 if len(job_type) > 1:
                     job["level"] = job_type[1]
 

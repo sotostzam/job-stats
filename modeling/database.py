@@ -8,11 +8,12 @@ class MongoDB:
         self.jobs = self.db.jobs
         self.jobs.create_index([('id', 1)], unique=True)
 
-    def insert_document(self, document):
-        try:
-            self.db.jobs.insert_one(document)
-        except DuplicateKeyError:
-            print(f'Found duplicates during insertion to db.')
+    def insert_documents(self, documents):
+        for document in documents:
+            try:
+                self.db.jobs.insert_one(document)
+            except DuplicateKeyError:
+                print(f'Job {document["id"]} already exists.')
 
     def find(self, query):
         return self.jobs.find(query)

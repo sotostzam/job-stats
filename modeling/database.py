@@ -1,12 +1,13 @@
 from pymongo import MongoClient
 from pymongo.errors import DuplicateKeyError
+from scrapers.common import pprint
 
 class MongoDB:
     def __init__(self):
+        self.name = self.__class__.__name__
         self.client = MongoClient('localhost', 27017)
         self.db = self.client.linkedin
         self.jobs = self.db.jobs
-        #self.jobs.create_index([('id', 1)], unique=True)
 
     def insert_documents(self, documents):
         inserted = 0
@@ -16,7 +17,7 @@ class MongoDB:
                 inserted += 1
             except DuplicateKeyError:
                 pass
-        print(f'\nDatabase | INFO: Inserted {inserted} new documents\n')
+        pprint(msg=f'Inserted {inserted} new documents', type=1, prefix=self.name)
 
     def find(self, query):
         return self.jobs.find(query)

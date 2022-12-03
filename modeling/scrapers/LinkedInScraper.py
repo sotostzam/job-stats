@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from datetime import datetime
 import time
 import re
+from .common import pprint, print_progress
 
 TIMEOUT = 2.5
 
@@ -20,14 +21,15 @@ class LinkedInScraper:
 
     Methods:
     -------
-    - `login()`: Performs the login to LinkedIn
+    - `login()`:           Performs the login to LinkedIn
     - `infinite_scroll()`: Scrolls to the end of the page
-    - `filter_job()`: Uses regex to match title of job
-    - `extract_job_data`: Formats the data from each job into a dictionary
-    - `get_jobs`: Main scraping method which automates the procedure
+    - `filter_job()`:      Uses regex to match title of job
+    - `extract_job_data`:  Formats the data from each job into a dictionary
+    - `get_jobs`:          Main scraping method which automates the procedure
     '''
 
     def __init__(self, username, password):
+        self.name = self.__class__.__name__
         self.options = webdriver.EdgeOptions()
         self.options.add_argument("headless")
         self.options.add_argument('--ignore-certificate-errors')
@@ -59,9 +61,9 @@ class LinkedInScraper:
         try:
             WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.ID, "global-nav")))
         except TimeoutException:
-            print(f'Scraper (LinkedIn) | ERROR: Login to LinkedIn failed.')
+            pprint(msg='Login to LinkedIn failed.', type=3, prefix=self.name)
             return False
-        print('Scraper (LinkedIn) | INFO: Login to LinkedIn was successful.')
+        pprint(msg='Login to LinkedIn was successful.', type=4, prefix=self.name)
         return True
 
     def infinite_scroll(self) -> bool:
@@ -99,7 +101,7 @@ class LinkedInScraper:
         Args:
         -------
         - `regex_matches` (dict): Dictionary containing regular expressions for each job title
-        - `job_role` (str): The title or role of the job
+        - `job_role`      (str):  The title or role of the job
 
         Returns:
         -------
@@ -119,20 +121,22 @@ class LinkedInScraper:
 
         Args:
         -------
-        - `roles` (list): A collection of job titles for searching
-        - `location` (str): The required location for the search
+        - `roles`         (list): A collection of job titles for searching
+        - `location`      (str): The required location for the search
         - `regex_matches` (dict): Dictionary containing regular expressions for each job title. Used for the `filter_job` method
-        - `max_posts` (int): Optional value, how may posts to search for each role. Default is set to 250
+        - `max_posts`     (int, optional): How may posts to search for each role. Default is set to 250
 
         Returns:
         -------
         - `list`: A collection of scraped job posts with their url, id and titles
         '''
-        print(f'Scraper (LinkedIn) | INFO: Gathering job posts for roles: {roles}')
+
+        pprint(msg=f'Gathering job posts for the following roles: {roles}', type=1, prefix=self.name)
+        print_progress(0, len(roles))
 
         job_list = []
 
-        for role in roles:
+        for i, role in enumerate(roles):
             # Replace special characters with utf characters
             role = role.replace(" ", "%20")
             location = location.replace(", ", "%2C%20")
@@ -171,7 +175,9 @@ class LinkedInScraper:
                 if not self.infinite_scroll():
                     break
 
-        print(f"Scraper (LinkedIn) | INFO: Number of total jobs identified: {len(job_list)}")
+            print_progress(i+1, len(roles),
+                msg_complete = pprint(msg=f'Number of total jobs identified: {len(job_list)}', type=1, prefix=self.name, as_str=True)
+            )
 
         return job_list
 
@@ -188,12 +194,13 @@ class LinkedInScraper:
         - `list`: A collection containing information about the gathered job posts. Each element is a `dict`
         '''
 
-        print('Scraper (LinkedIn) | INFO: Scraping data for each job post.')
+        pprint(msg='Scraping data for each job post.', type=1, prefix=self.name)
+        print_progress(0, len(job_list))
 
         job_data = []
         job_info_section = f'//div[@role="main"]/div[1]/div/div/div[1]'
 
-        for job_record in job_list:
+        for i, job_record in enumerate(job_list):
             job_url, job_id, job_roles = job_record
             job = {}
             self.driver.get(job_url)
@@ -229,8 +236,12 @@ class LinkedInScraper:
                 job_data.append(job)
 
             except NoSuchElementException:
-                print(f'Scraper (LinkedIn) | ERROR: Exception retrieving data from job url:\n\t{job_url}')
+                pprint(msg=f'Exception retrieving data from job url:\n{job_url}', type=3, prefix=self.name)
                 break
+
+            print_progress(i+1, len(job_list),
+                msg_complete = pprint(msg='All job data were processed successfully.', type=4, prefix=self.name, as_str=True)
+            )
 
         return job_data
 
@@ -240,10 +251,10 @@ class LinkedInScraper:
 
         Args:
         -------
-        - `roles` (list): A collection of job titles for searching
-        - `location` (str): The required location for the search
+        - `roles`         (list): A collection of job titles for searching
+        - `location`      (str):  The required location for the search
         - `regex_matches` (dict): Dictionary containing regular expressions for each job title
-        - `max_posts` (int): Optional value, how may posts to search for each role. Default is set to 250
+        - `max_posts`     (int):  Optional value, how may posts to search for each role. Default is set to 250
 
         Returns:
         -------
@@ -254,7 +265,7 @@ class LinkedInScraper:
         job_list = self.get_job_list(roles, location, regex_matches, max_posts)
 
         if not job_list:
-            print('Scraper (LinkedIn) | ERROR: No jobs found during search.')
+            pprint(msg='No jobs found during search.', type=3, prefix=self.name)
             return False
 
         if self.login():

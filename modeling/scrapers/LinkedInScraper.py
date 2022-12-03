@@ -11,7 +11,7 @@ TIMEOUT = 2.5
 
 class LinkedInScraper:
     '''
-    Creates a new instance of the LinkedIn scraper.
+    Creates a new instance of the scraper (LinkedIn).
 
     Args:
     -------
@@ -57,12 +57,11 @@ class LinkedInScraper:
         self.driver.find_element(By.ID, 'session_password').send_keys(self.password)
         self.driver.find_element(By.CLASS_NAME, "sign-in-form__submit-button").click()
         try:
-            print('Attempting login phase...')
             WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.ID, "global-nav")))
-            print("Login was successful.")
         except TimeoutException:
-            print('Login failed.')
+            print(f'Scraper (LinkedIn) | ERROR: Login to LinkedIn failed.')
             return False
+        print('Scraper (LinkedIn) | INFO: Login to LinkedIn was successful.')
         return True
 
     def infinite_scroll(self) -> bool:
@@ -114,55 +113,65 @@ class LinkedInScraper:
                     roles.append(role)
         return roles
 
-    def get_job_list(self, url: str, regex_matches: dict) -> list:
+    def get_job_list(self, roles: list, location: str, regex_matches: dict, max_posts: int) -> list:
         '''
         Collects all available job posts.
 
         Args:
         -------
-        - `url` (str): The url of the job post
+        - `roles` (list): A collection of job titles for searching
+        - `location` (str): The required location for the search
         - `regex_matches` (dict): Dictionary containing regular expressions for each job title. Used for the `filter_job` method
+        - `max_posts` (int): Optional value, how may posts to search for each role. Default is set to 250
 
         Returns:
         -------
         - `list`: A collection of scraped job posts with their url, id and titles
         '''
-        
-        print('LinkedIn Scraper | INFO: Gathering job posts. Please wait...\n')
+        print(f'Scraper (LinkedIn) | INFO: Gathering job posts for roles: {roles}')
 
         job_list = []
 
-        self.driver.get(url)
+        for role in roles:
+            # Replace special characters with utf characters
+            role = role.replace(" ", "%20")
+            location = location.replace(", ", "%2C%20")
+            url = self.url_index + f"jobs/search?keywords={role}&location={location}"
 
-        # Number of initially loaded jobs
-        current_job_index = 0
-        exceptions = 0
+            # Access url with set driver
+            self.driver.get(url)
 
-        while True:
-            job_listings = len(self.driver.find_elements(By.XPATH, "//ul[@class='jobs-search__results-list']/li"))
+            # Number of initially loaded jobs
+            current_job_index = 0
 
-            for _ in range(current_job_index, job_listings):
-                current_job_index += 1
-                try:
-                    job_path = f'//*[@id="main-content"]/section[@class="two-pane-serp-page__results-list"]/ul/li[{current_job_index}]/div'
-                    job_roles = self.filter_job(regex_matches, self.driver.find_element(By.XPATH, job_path + '/div[2]/h3').text)
-                    if not job_roles:
-                        continue
-                    job_url = self.driver.find_element(By.XPATH, job_path + '/a').get_attribute('href')
-                    job_id = self.driver.find_element(By.XPATH, job_path).get_attribute('data-entity-urn').split(":")[-1]
-                    job_list.append((job_url, job_id, job_roles))
-                except NoSuchElementException:
-                    exceptions += 1
+            while True:
+                job_listings = len(self.driver.find_elements(By.XPATH, "//ul[@class='jobs-search__results-list']/li"))
 
-            #TODO Check if loading more jobs means less accuracy
-            if current_job_index >= 500:
-                break
+                for _ in range(current_job_index, job_listings):
+                    current_job_index += 1
+                    try:
+                        job_path = f'//*[@id="main-content"]/section[@class="two-pane-serp-page__results-list"]/ul/li[{current_job_index}]/div'
+                        job_roles = self.filter_job(regex_matches, self.driver.find_element(By.XPATH, job_path + '/div[2]/h3').text)
+                        if not job_roles:
+                            continue
+                        job_url = self.driver.find_element(By.XPATH, job_path + '/a').get_attribute('href')
+                        job_id = self.driver.find_element(By.XPATH, job_path).get_attribute('data-entity-urn').split(":")[-1]
 
-            if not self.infinite_scroll():
-                break
+                        exists = [item for item in job_list if item[1] == job_id]
+                        if not exists:
+                            job_list.append((job_url, job_id, job_roles))
+                    except NoSuchElementException:
+                        pass
 
-        print(f"LinkedIn Scraper | WARN: Number of corrupted links found: {exceptions}")
-        print(f"LinkedIn Scraper | INFO: Number of matched jobs gathered: {len(job_list)}/{current_job_index}\n")
+                # Limit job posts accessed as bigger number results in less accuracy of titles
+                if current_job_index >= max_posts:
+                    break
+
+                # Check if page has been scrolled
+                if not self.infinite_scroll():
+                    break
+
+        print(f"Scraper (LinkedIn) | INFO: Number of total jobs identified: {len(job_list)}")
 
         return job_list
 
@@ -179,6 +188,8 @@ class LinkedInScraper:
         - `list`: A collection containing information about the gathered job posts. Each element is a `dict`
         '''
 
+        print('Scraper (LinkedIn) | INFO: Scraping data for each job post.')
+
         job_data = []
         job_info_section = f'//div[@role="main"]/div[1]/div/div/div[1]'
 
@@ -189,7 +200,7 @@ class LinkedInScraper:
             time.sleep(TIMEOUT)
 
             try:
-                job['id']       = int(job_id)
+                job['_id']      = int(job_id)
                 job['url']      = job_url
                 job['title']    = self.driver.find_element(By.XPATH, job_info_section + '/h1').text
                 job['roles']    = job_roles
@@ -198,12 +209,11 @@ class LinkedInScraper:
                 
                 job_type = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/ul/li[1]/span').text.split(" · ")
                 job["type"] = job_type[0]
-                if job_type:
+                if len(job_type) > 1:
                     job["level"] = job_type[1]
 
                 job_insights = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/ul/li[2]/span').text.split(" · ")
-                job["company_size"] = job_insights[0].removesuffix(' employees')
-                if job_insights:
+                if len(job_insights) > 1:
                     job["industry"] = job_insights[1]
 
                 try:
@@ -211,26 +221,29 @@ class LinkedInScraper:
                 except NoSuchElementException:
                     pass
                 
-                job['published']     = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[2]/span[1]').text
-                job['description']   = self.driver.find_element(By.XPATH, f'//div[@role="main"]/section/div[1]/div').text
-                job['date_inserted'] = datetime.utcnow()
+                # Get the description of the job
+                job['description'] = self.driver.find_element(By.XPATH, f'//div[@id="job-details"]/span').get_attribute('innerText')
+
+                job['last_accessed'] = datetime.utcnow()
 
                 job_data.append(job)
 
             except NoSuchElementException:
-                print('LinkedIn Scraper | ERROR: Exception finding title in url:', job_url)
+                print(f'Scraper (LinkedIn) | ERROR: Exception retrieving data from job url:\n\t{job_url}')
+                break
 
         return job_data
 
-    def get_jobs(self, role: str, location: str, regex_matches: dict) -> (list | bool):
+    def get_jobs(self, roles: list, location: str, regex_matches: dict, max_posts: int = 250) -> (list | bool):
         '''
         Performs the necessary steps to scrap data from LinkedIn given a job title and location.
 
         Args:
         -------
-        - `role` (str): A collection of scraped job posts with their url, id and titles
-        - `location` (str): A collection of scraped job posts with their url, id and titles
+        - `roles` (list): A collection of job titles for searching
+        - `location` (str): The required location for the search
         - `regex_matches` (dict): Dictionary containing regular expressions for each job title
+        - `max_posts` (int): Optional value, how may posts to search for each role. Default is set to 250
 
         Returns:
         -------
@@ -238,20 +251,13 @@ class LinkedInScraper:
         - `bool`: Returns False if either no job posts were found or the login failed
         '''
 
-        role = role.replace(" ", "%20")
-        location = location.replace(", ", "%2C%20")
-        url = self.url_index + f"jobs/search?keywords={role}&location={location}"
-
-        print('LinkedIn Scraper | INFO: Generating job list...')
-
-        job_list = self.get_job_list(url, regex_matches)
+        job_list = self.get_job_list(roles, location, regex_matches, max_posts)
 
         if not job_list:
-            print('LinkedIn Scraper | ERROR: No jobs found during search.')
+            print('Scraper (LinkedIn) | ERROR: No jobs found during search.')
             return False
 
         if self.login():
             return self.extract_job_data(job_list) 
         else:
-            print('LinkedIn Scraper | ERROR: Login failed.')
             return False

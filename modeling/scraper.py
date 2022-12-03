@@ -3,17 +3,19 @@ from database import MongoDB
 import json
 
 if __name__ == "__main__":
-    # The search keywords used for scraping job posts
-    role = "Data Scientist"
-    location = "Athens, Attiki, Greece"
+    # Search keywords used for scraping job posts
+    role = ["Data Scientist", "Machine Learning", "Data Analyst", "ML Ops"]
+    location = "Greece"
 
     # Regex expressions to match desired job titles
     regex_matches = {
         'Data Scientist': [r'.*[Dd]ata.?[Ss]cien.*'],
         'Data Analyst':   [r'.*[Dd]ata.?[Aa]nalyst.*'],
-        'ML Engineer':    [r'.*[Mm]achine.?[Ll]earning.*', r'.*[Mm][Ll].?[Ee]ngineer.*'],
-        'Deep Learning':  [r'.*[Dd]eep.?[Ll]earning.*'],
-        'AI Engineer':    [r'.*[Aa]rtificial.?[Ii]ntelligence.*', r'(?:^|(?<=[\s]))\(?[Aa][Ii]\)?(?=[\s]|$)'],
+        'ML Engineer':    [r'.*[Mm]achine.?[Ll]earning.*',
+                           r'.*[Mm][Ll].?[Ee]ngineer.*',
+                           r'.*[Dd]eep.?[Ll]earning.*',
+                           r'.*[Aa]rtificial.?[Ii]ntelligence.*',
+                           r'(?:^|(?<=[\s]))\(?[Aa][Ii]\)?(?=[\s]|$)'],
         'MLOps':          [r'.*[Mm][Ll].?[Oo]ps']
     }
 

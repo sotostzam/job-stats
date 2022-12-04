@@ -7,16 +7,11 @@ from datetime import datetime
 import time
 from .common import *
 
-TIMEOUT = 2.5
+TIMEOUT = 2
 
-class LinkedInScraper:
+class KarieraScraper:
     '''
-    Creates a new instance of the scraper (LinkedIn).
-
-    Args:
-    -------
-    - `username` (str): The username used to login to LinkedIn
-    - `password` (str): The password used to login to LinkedIn
+    Creates a new instance of the scraper (Kariera).
 
     Methods:
     -------
@@ -27,7 +22,7 @@ class LinkedInScraper:
     - `get_jobs`:          Main scraping method which automates the procedure
     '''
 
-    def __init__(self, username, password):
+    def __init__(self):
         self.name = self.__class__.__name__
         self.options = webdriver.EdgeOptions()
         self.options.add_argument("headless")
@@ -39,59 +34,23 @@ class LinkedInScraper:
         self.options.add_experimental_option('excludeSwitches', ['enable-logging'])
         self.driver = webdriver.Edge(options=self.options)
 
-        self.url_index = "https://www.linkedin.com/"
-
-        self.username = username
-        self.password = password
-
-    def login(self) -> bool:
+    def load_more(self, url: str, current_page: int) -> bool:
         '''
-        Performs the login process to LinkedIn.
+        Advances the pagination to load more results.
 
         Returns:
         -------
-        - `bool`: True if login was successful, otherwise False
+        - `bool`: If a new page was found and clicked returns True
         '''
-        self.driver.get(self.url_index)
-        WebDriverWait(self.driver,5).until(EC.visibility_of_all_elements_located((By.ID,"session_key")))
-        self.driver.find_element(By.ID, 'session_key').send_keys(self.username)
-        self.driver.find_element(By.ID, 'session_password').send_keys(self.password)
-        self.driver.find_element(By.CLASS_NAME, "sign-in-form__submit-button").click()
-        try:
-            WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.ID, "global-nav")))
-        except TimeoutException:
-            pprint(msg='Login to LinkedIn failed.', type=3, prefix=self.name)
-            return False
-        pprint(msg='Login to LinkedIn was successful.', type=4, prefix=self.name)
-        return True
-
-    def infinite_scroll(self) -> bool:
-        '''
-        Scrolls down to the end of the page.
-
-        Returns:
-        -------
-        - `bool`: If scroll was successful returns True. When the end of the page is found returns False
-        '''
-
-        # Get scroll height
-        last_height = self.driver.execute_script("return document.body.scrollHeight")
 
         # Check if show more button is present and click it
-        infinite_scroller_btn = self.driver.find_elements(By.CLASS_NAME, "infinite-scroller__show-more-button--visible")
-        if infinite_scroller_btn:
-            infinite_scroller_btn[0].click()
-        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-        time.sleep(TIMEOUT)
-
-        # Calculate new scroll height and compare with last value
-        new_height = self.driver.execute_script("return document.body.scrollHeight")
-        if new_height == last_height:
-            return False
-
-        last_height = new_height
-
-        return True
+        pages = self.driver.find_elements(By.CLASS_NAME, "ant-pagination-item")
+        for page in pages:
+            if int(page.get_attribute("title")) > current_page:
+                self.driver.get(url + f'&page={current_page}')
+                time.sleep(TIMEOUT)
+                return True
+        return False
 
     def get_job_list(self, roles: list, location: str, max_posts: int) -> list:
         '''
@@ -108,6 +67,7 @@ class LinkedInScraper:
         - `list`: A collection of scraped job posts with their url, id and titles
         '''
 
+        pprint(msg=f'The location argument is not supported in this scraper as it is only available in Greece.', type=1, prefix=self.name)
         pprint(msg=f'Gathering job posts for the following roles: {roles}', type=1, prefix=self.name)
         print_progress(0, len(roles))
 
@@ -116,27 +76,31 @@ class LinkedInScraper:
         for i, role in enumerate(roles):
             # Replace special characters with utf characters
             role = role.replace(" ", "%20")
-            location = location.replace(", ", "%2C%20")
-            url = self.url_index + f"jobs/search?keywords={role}&location={location}"
+            url = f"https://www.kariera.gr/en/jobs?title={role}"
 
             # Access url with set driver
             self.driver.get(url)
+            try:
+                WebDriverWait(self.driver,5).until(EC.visibility_of_all_elements_located((By.ID,"CybotCookiebotDialogBodyButtonDecline")))
+                self.driver.find_element(By.ID,"CybotCookiebotDialogBodyButtonDecline").click()
+            except TimeoutException:
+                pass
 
             # Number of initially loaded jobs
+            current_page = 1
             current_job_index = 0
 
             while True:
-                job_listings = len(self.driver.find_elements(By.XPATH, "//ul[@class='jobs-search__results-list']/li"))
+                job_listings = self.driver.find_elements(By.XPATH, "//*[@data-testid='job-card']")
 
-                for _ in range(current_job_index, job_listings):
+                for job_post in job_listings:
                     current_job_index += 1
                     try:
-                        job_path = f'//*[@id="main-content"]/section[@class="two-pane-serp-page__results-list"]/ul/li[{current_job_index}]/div'
-                        job_roles = filter_job(self.driver.find_element(By.XPATH, job_path + '/div[2]/h3').text)
+                        job_roles = filter_job(job_post.find_element(By.XPATH, './/div[1]/div[1]/div[2]/div[2]/a').text)
                         if not job_roles:
                             continue
-                        job_url = self.driver.find_element(By.XPATH, job_path + '/a').get_attribute('href')
-                        job_id = self.driver.find_element(By.XPATH, job_path).get_attribute('data-entity-urn').split(":")[-1]
+                        job_url = job_post.find_element(By.XPATH, './/div[1]/div[1]/div[2]/div[2]/a').get_attribute('href')
+                        job_id = job_url.split('/en/jobs/')[-1]
 
                         exists = [item for item in job_list if item[1] == job_id]
                         if not exists:
@@ -148,8 +112,9 @@ class LinkedInScraper:
                 if current_job_index >= max_posts:
                     break
 
-                # Check if page has been scrolled
-                if not self.infinite_scroll():
+                if self.load_more(url, current_page):
+                    current_page += 1
+                else:
                     break
 
             print_progress(i+1, len(roles),
@@ -175,7 +140,7 @@ class LinkedInScraper:
         print_progress(0, len(job_list))
 
         job_data = []
-        job_info_section = f'//div[@role="main"]/div[1]/div/div/div[1]'
+        job_info_section = f'//main[@class="ant-layout-content"]/section'
 
         for i, job_record in enumerate(job_list):
             job_url, job_id, job_roles = job_record
@@ -184,36 +149,38 @@ class LinkedInScraper:
             time.sleep(TIMEOUT)
 
             try:
-                job['_id']      = int(job_id)
-                job['url']      = job_url
-                job['title']    = self.driver.find_element(By.XPATH, job_info_section + '/h1').text
-                job['roles']    = job_roles
-                job['company']  = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[1]/span[1]').text
-                job['location'] = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[1]/span[2]').text
-                
-                job_type = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/ul/li[1]/span').text.split(" · ")
-                job["type"] = job_type[0]
-                if len(job_type) > 1:
-                    job["level"] = job_type[1]
+                job['_id']   = int(job_id)
+                job['url']   = job_url
+                job['title'] = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/div/div/div[1]/div/div').text
+                job['roles'] = job_roles
 
-                job_insights = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/ul/li[2]/span').text.split(" · ")
-                if len(job_insights) > 1:
-                    job["industry"] = job_insights[1]
+                # This site allows for no value under the company name
+                try:
+                    job['company']  = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[1]/section/div[1]/a[1]').text
+                except NoSuchElementException:
+                    job['company'] = '-'
+
+                job['location'] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[1]/div[1]/a').text
+                job["type"]     = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[1]/div[4]/a').text
+                job["level"]    = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[1]/div[3]/a').text
+                job["industry"] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[2]/div[1]/a').text
 
                 try:
-                    job['workplace'] = self.driver.find_element(By.XPATH, job_info_section + '/div[1]/span[1]/span[3]').text
+                    job['workplace'] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[2]/div[2]/a').text
                 except NoSuchElementException:
-                    pass
+                    job['workplace'] = 'On-site'
                 
                 # Get the description of the job
-                job['description'] = self.driver.find_element(By.XPATH, f'//div[@id="job-details"]/span').get_attribute('innerText')
+                #job['description'] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[2]').get_attribute('innerText')
+                job['description'] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[2]').text
 
                 job['last_accessed'] = datetime.utcnow()
 
                 job_data.append(job)
 
-            except NoSuchElementException:
+            except NoSuchElementException as e:
                 pprint(msg=f'Exception retrieving data from job url:\n{job_url}', type=3, prefix=self.name)
+                print(e)
                 break
 
             print_progress(i+1, len(job_list),
@@ -244,7 +211,4 @@ class LinkedInScraper:
             pprint(msg='No jobs found during search.', type=3, prefix=self.name)
             return False
 
-        if self.login():
-            return self.extract_job_data(job_list) 
-        else:
-            return False
+        return self.extract_job_data(job_list)

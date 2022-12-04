@@ -1,4 +1,4 @@
-from scrapers import LinkedInScraper
+from scrapers import LinkedInScraper, KarieraScraper
 from database import MongoDB
 import json
 
@@ -6,18 +6,6 @@ if __name__ == "__main__":
     # Search keywords used for scraping job posts
     role = ["Data Scientist", "Machine Learning", "Data Analyst", "ML Ops"]
     location = "Greece"
-
-    # Regex expressions to match desired job titles
-    regex_matches = {
-        'Data Scientist': [r'.*[Dd]ata.?[Ss]cien.*'],
-        'Data Analyst':   [r'.*[Dd]ata.?[Aa]nalyst.*'],
-        'ML Engineer':    [r'.*[Mm]achine.?[Ll]earning.*',
-                           r'.*[Mm][Ll].?[Ee]ngineer.*',
-                           r'.*[Dd]eep.?[Ll]earning.*',
-                           r'.*[Aa]rtificial.?[Ii]ntelligence.*',
-                           r'(?:^|(?<=[\s]))\(?[Aa][Ii]\)?(?=[\s]|$)'],
-        'MLOps':          [r'.*[Mm][Ll].?[Oo]ps']
-    }
 
     # Read the secret credentials for login
     with open("../credentials.json",'r') as secrets:
@@ -28,11 +16,12 @@ if __name__ == "__main__":
 
     # List of created scrapers
     scrapers = [
-        LinkedInScraper(creds['username'], creds['password'])
+        LinkedInScraper(creds['username'], creds['password']),
+        KarieraScraper()
     ]
 
     # Perform scraping from all available websites
     for scraper in scrapers:
-        scraped_jobs = scraper.get_jobs(role, location, regex_matches)
+        scraped_jobs = scraper.get_jobs(role, location)
         if scraped_jobs:
             database.insert_documents(scraped_jobs)

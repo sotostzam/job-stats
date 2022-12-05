@@ -1,4 +1,4 @@
-from scrapers import LinkedInScraper, KarieraScraper
+from scrapers import LinkedInScraper, KarieraScraper, IndeedScraper
 from database import MongoDB
 import json
 
@@ -17,7 +17,8 @@ if __name__ == "__main__":
     # List of created scrapers
     scrapers = [
         LinkedInScraper(creds['username'], creds['password']),
-        KarieraScraper()
+        KarieraScraper(),
+        IndeedScraper()
     ]
 
     # Perform scraping from all available websites

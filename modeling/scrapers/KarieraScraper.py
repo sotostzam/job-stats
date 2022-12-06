@@ -16,7 +16,7 @@ class KarieraScraper:
     Methods:
     -------
     - `login()`:           Performs the login to LinkedIn
-    - `infinite_scroll()`: Scrolls to the end of the page
+    - `load_more()`:       Loads the next page until a thrueshold
     - `filter_job()`:      Uses regex to match title of job
     - `extract_job_data`:  Formats the data from each job into a dictionary
     - `get_jobs`:          Main scraping method which automates the procedure

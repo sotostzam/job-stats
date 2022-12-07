@@ -158,7 +158,7 @@ class KarieraScraper:
                 try:
                     job['company']  = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[1]/section/div[1]/a[1]').text
                 except NoSuchElementException:
-                    job['company'] = '-'
+                    pass
 
                 job['location'] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[1]/div[1]/a').text
                 job["type"]     = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[1]/div[4]/a').text

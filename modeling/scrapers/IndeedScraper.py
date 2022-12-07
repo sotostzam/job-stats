@@ -151,45 +151,34 @@ class IndeedScraper:
             self.driver.get(job_url)
             time.sleep(1)
 
-            x = self.driver.find_element(By.ID, 'viewJobSSRRoot')
-            y = self.driver.find_element(By.XPATH, '//div[@id="viewJobSSRRoot"]/div[2]/div/div[3]/div/div/div[1]/div[1]')
-
+            job_container = self.driver.find_element(By.XPATH, job_info_section)
             try:
                 job['_id']   = str(job_id)
                 job['url']   = job_url
-                job['title'] = self.driver.find_element(By.XPATH, job_info_section + '/div[3]/div[1]/div[1]/h1').text
+                job['title'] = job_container.find_element(By.XPATH, './/h1[contains(@class, "jobsearch-JobInfoHeader-title")]').text
                 job['roles'] = job_roles
 
-                # This site allows for no value under the company name
+                # This site allows for missing value under the company name
                 try:
                     job['company'] = self.driver.find_element(By.XPATH, job_info_section + '/div[3]/div[1]/div[2]/div/div/div/div[1]/div[2]/div/a').text
                 except NoSuchElementException:
-                    job['company'] = '-'
+                    pass
 
-                job['location'] = self.driver.find_element(By.XPATH, job_info_section + '/div[3]/div[1]/div[2]/div/div/div/div[2]/div').text
-                job["type"]     = self.driver.find_element(By.XPATH, job_info_section + '/div[6]/div[2]/div/div[2]/div[2]').text
-                #job["level"]    = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[1]/div[3]/a').text
-                #job["industry"] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[2]/div[1]/a').text
+                job['location'] = job_container.find_element(By.XPATH, './/div[contains(@class, "jobsearch-JobInfoHeader-subtitle")]/div[2]/div').text
 
-                # try:
-                #     job['workplace'] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[1]/div[2]/div[2]/div[2]/a').text
-                # except NoSuchElementException:
-                #     job['workplace'] = 'On-site'
-                
-                # Get the description of the job
-                #job['description'] = self.driver.find_element(By.XPATH, job_info_section + '/div[2]/div[2]').get_attribute('innerText')
-                job['description'] = self.driver.find_element(By.XPATH, job_info_section + '/div[6]/div[4]/div[1]').text
+                # This site allows for missing value under the type variable
+                try:
+                    job["type"] = job_container.find_element(By.XPATH, './/div[@id="jobDetailsSection"]/div[2]/div[2]').text
+                except NoSuchElementException:
+                    pass
 
+                job['description']  = job_container.find_element(By.XPATH, './/div[@id="jobDescriptionText"]').text
                 job['last_accessed'] = datetime.utcnow()
 
                 job_data.append(job)
 
             except NoSuchElementException as e:
                 pprint(msg=f'Exception retrieving data from job url:\n{job_url}', type=3, prefix=self.name)
-                print(e)
-                break
-
-            if i >= 5:
                 break
 
             print_progress(i+1, len(job_list),
@@ -221,3 +210,4 @@ class IndeedScraper:
             return False
 
         return self.extract_job_data(job_list)
+        

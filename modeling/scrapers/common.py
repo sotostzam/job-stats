@@ -17,8 +17,9 @@ REGEX_ROLES = {
                        r'.*[Mm][Ll].?[Ee]ngineer.*',
                        r'.*[Dd]eep.?[Ll]earning.*',
                        r'.*[Aa]rtificial.?[Ii]ntelligence.*',
-                       r'(?:^|(?<=[\s]))\(?[Aa][Ii]\)?(?=[\s]|$)'],
-    'MLOps':          [r'.*[Mm][Ll].?[Oo]ps']
+                       r'(?:^|(?<=[\s]))\(?[Aa][Ii]\)?(?=[\s]|$)',
+                       r'.*[Mm][Ll].?[Oo]ps'],
+    'Data Engineer':  [r'.*[Dd]ata.?[Ee]ngineer.*']
 }
 
 def pprint(msg: str, type: int, prefix: str = '', as_str = False) -> (str | None):

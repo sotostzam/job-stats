@@ -4,7 +4,7 @@ import json
 
 if __name__ == "__main__":
     # Search keywords used for scraping job posts
-    role = ["Data Scientist", "Machine Learning", "Data Analyst", "ML Ops"]
+    role = ["Data Scientist", "Machine Learning", "Data Analyst", "ML Ops", "Data Engineer"]
     location = "Greece"
 
     # Read the secret credentials for login

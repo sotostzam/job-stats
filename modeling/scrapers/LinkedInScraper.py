@@ -30,7 +30,7 @@ class LinkedInScraper:
     def __init__(self, username, password):
         self.name = self.__class__.__name__
         self.options = webdriver.EdgeOptions()
-        self.options.add_argument("headless")
+        #self.options.add_argument("headless")
         self.options.add_argument('--ignore-certificate-errors')
         self.options.add_argument("--start-maximized")
         self.options.add_argument("--disable-gpu")
@@ -56,7 +56,7 @@ class LinkedInScraper:
         WebDriverWait(self.driver,5).until(EC.visibility_of_all_elements_located((By.ID,"session_key")))
         self.driver.find_element(By.ID, 'session_key').send_keys(self.username)
         self.driver.find_element(By.ID, 'session_password').send_keys(self.password)
-        self.driver.find_element(By.CLASS_NAME, "sign-in-form__submit-button").click()
+        self.driver.find_element(By.CLASS_NAME, "sign-in-form__submit-btn--full-width").click()
         try:
             WebDriverWait(self.driver, 100).until(EC.presence_of_element_located((By.ID, "global-nav")))
         except TimeoutException:

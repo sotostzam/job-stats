@@ -143,7 +143,7 @@ class IndeedScraper:
         print_progress(0, len(job_list))
 
         job_data = []
-        job_info_section = f'//div[@id="viewJobSSRRoot"]/div[2]/div/div[3]/div/div/div[1]/div[1]'
+        job_info_section = f'//div[@id="viewJobSSRRoot"]/div[2]/div/div[4]/div/div/div[1]/div[1]'
 
         for i, job_record in enumerate(job_list):
             job_url, job_id, job_roles = job_record
@@ -164,7 +164,7 @@ class IndeedScraper:
                 except NoSuchElementException:
                     pass
 
-                job['location'] = job_container.find_element(By.XPATH, './/div[contains(@class, "jobsearch-JobInfoHeader-subtitle")]/div[2]/div').text
+                job['location'] = job_container.find_element(By.XPATH, './/div[contains(@class, "jobsearch-CompanyInfoWithoutHeaderImage")]/div/div/div[2]/div').text
 
                 # This site allows for missing value under the type variable
                 try:
@@ -172,12 +172,12 @@ class IndeedScraper:
                 except NoSuchElementException:
                     pass
 
-                job['description']  = job_container.find_element(By.XPATH, './/div[@id="jobDescriptionText"]').text
+                job['description']  = job_container.find_element(By.ID, 'jobDescriptionText').text
                 job['last_accessed'] = datetime.utcnow()
 
                 job_data.append(job)
 
-            except NoSuchElementException as e:
+            except NoSuchElementException:
                 pprint(msg=f'Exception retrieving data from job url:\n{job_url}', type=3, prefix=self.name)
                 break
 

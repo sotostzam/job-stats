@@ -6,7 +6,7 @@ class MongoDB:
     def __init__(self):
         self.name = self.__class__.__name__
         self.client = MongoClient('localhost', 27017)
-        self.db = self.client.linkedin
+        self.db = self.client.scraper
         self.jobs = self.db.jobs
 
     def insert_documents(self, documents):

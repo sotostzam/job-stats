@@ -25,7 +25,7 @@ class KarieraScraper:
     def __init__(self):
         self.name = self.__class__.__name__
         self.options = webdriver.EdgeOptions()
-        self.options.add_argument("headless")
+        #self.options.add_argument("headless")
         self.options.add_argument('--ignore-certificate-errors')
         self.options.add_argument("--start-maximized")
         self.options.add_argument("--disable-gpu")
@@ -100,7 +100,7 @@ class KarieraScraper:
                         if not job_roles:
                             continue
                         job_url = job_post.find_element(By.XPATH, './/div[1]/div[1]/div[2]/div[2]/a').get_attribute('href')
-                        job_id = job_url.split('/en/jobs/')[-1]
+                        job_id = job_url.split('/')[-1]
 
                         exists = [item for item in job_list if item[1] == job_id]
                         if not exists:

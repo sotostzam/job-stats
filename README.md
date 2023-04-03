@@ -18,12 +18,40 @@ your machine, you can install all the requirements with `pip`, by using the foll
 pip install -r requirements.txt
 ```
 
+After that step, if you want to rerun the whole application you should create a file named
+`credentials.json` in the root diretory of the project. This file should contain the following
+code:
+
+```json
+{
+    "username": "your@email.com",
+    "password": "yourPassword"
+}
+```
+
+These should be your credentials of the LinkedIn webside, in order to use the scraper correctly.
+
 ## Usage
 
+### Clone the repository and install dependencies
+
 1. Clone the repository
-2. Install the dependencies as explained above
-3. You have to install MongoDB in your system. A python class will take care of initializing
-   the localhost database and the collection
-4. Enter the "modeling" directory by using the `cd modeling` command
-5. Run the scraper: `python scraper.py`
-6. Coming soon...
+2. Install the dependencies as explained in the documentation
+
+### Set up MongoDB
+
+1. Install MongoDB in your system
+2. A Python class will take care of initializing the localhost database and the collection
+
+### Scraping Process
+
+1. Navigate to the "modeling" directory: `cd modeling`
+2. Run the scraper: `python scraper.py`
+3. After successful scraping of the websites, you are ready to move on to analysis.
+
+### Run the Analysis
+
+1. Navigate to the "notebooks" directory: `cd notebooks`
+2. Run each desired notebook one by one
+3. Notebook number 1 contains an already successful run of the notebook. If you want to run it in your own machine, you have to run through the scraping process first.
+4. (Optional) If you want to rerun the analysis on your own scraped data, please run notebook number 2 as well.

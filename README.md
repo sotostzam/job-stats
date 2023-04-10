@@ -76,12 +76,23 @@ The third notebook contains code for running a set of simple classifiers. This i
 Additionally, it includes a brief analysis and several improvements to the classifiers such as
 n-gram range selection, cross-validation, and hyperparameter tuning through `GridSearchCV`.
 
-#### Word Embeddings Classifier
+#### Word Embeddings
 
-In notebook number four, I created a word embeddings classifier. Word embeddings are a way of representing
+In notebook number four, I created a word embeddings model. Word embeddings are a way of representing
 words as dense vectors of real numbers. They are used in natural language processing (NLP) to encode words
 in a way that allows them to be used as input to machine learning models.
 
 The main advantage of word embeddings is that they allow us to use an efficient, dense representation in
 which similar words have a similar encoding. This makes it possible to use machine learning algorithms to
 analyze text data and perform tasks such as sentiment analysis, text classification, and machine translation.
+
+#### Word2Vec
+
+Word2vec is a family of algorithms that let us learn and train word embeddings from a corpus. One way of
+learning vector represantation of words is called `continuous skip-gram` model. This model predicts the words
+around the word currently being searched. The amount of words to be searched has a certain range which we specify.
+
+In this model the first thing is to generate the positive-skip grams for each word. Positive in the sense that
+the neightborhood of the word includes words that appear within the specified range or window. After this we will
+have to find also the negative sampling for skip-gram generation. These are the pairs of the current word and an
+amount of words that do not appear within our specified window.

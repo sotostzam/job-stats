@@ -96,3 +96,14 @@ In this model the first thing is to generate the positive-skip grams for each wo
 the neightborhood of the word includes words that appear within the specified range or window. After this we will
 have to find also the negative sampling for skip-gram generation. These are the pairs of the current word and an
 amount of words that do not appear within our specified window.
+
+#### Word Embeddings + LSTM
+
+Long Short-Term Memory (LSTM) networks are a type of recurrent neural network (RNN) that are capable of learning
+long-term dependencies in sequential data. In particular, LSTM networks can be used to model the sequential nature
+of job posts and capture long-term dependencies between words.
+
+Word embeddings can then be used to represent each word as a vector in a high-dimensional space, which can help
+capture semantic relationships between words2. By combining these two techniques, it is possible to improve the
+accuracy of skill extraction from job posts by identifying relevant keywords and phrases that are indicative of
+specific skills. This deep learning model proved to be the best performing one compared to the previous models.

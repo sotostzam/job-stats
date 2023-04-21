@@ -63,7 +63,7 @@ file as "not_skill", "soft_skill", or "hard_skill".
 
 ### Classifiers
 
-#### Simple Models
+#### Supervised Learning Models
 
 The third notebook contains code for running a set of simple classifiers. This includes the following:
 
@@ -76,20 +76,10 @@ The third notebook contains code for running a set of simple classifiers. This i
 Additionally, it includes a brief analysis and several improvements to the classifiers such as
 n-gram range selection, cross-validation, and hyperparameter tuning through `GridSearchCV`.
 
-#### Word Embeddings
-
-In notebook number four, I created a word embeddings model. Word embeddings are a way of representing
-words as dense vectors of real numbers. They are used in natural language processing (NLP) to encode words
-in a way that allows them to be used as input to machine learning models.
-
-The main advantage of word embeddings is that they allow us to use an efficient, dense representation in
-which similar words have a similar encoding. This makes it possible to use machine learning algorithms to
-analyze text data and perform tasks such as sentiment analysis, text classification, and machine translation.
-
 #### Word2Vec
 
-Word2vec is a family of algorithms that let us learn and train word embeddings from a corpus. One way of
-learning vector represantation of words is called `continuous skip-gram` model. This model predicts the words
+Word2vec is a family of self-supervised algorithms that let us learn and train word embeddings from a corpus. One way
+of learning vector represantation of words is called `continuous skip-gram` model. This model predicts the words
 around the word currently being searched. The amount of words to be searched has a certain range which we specify.
 
 In this model the first thing is to generate the positive-skip grams for each word. Positive in the sense that
@@ -97,13 +87,28 @@ the neightborhood of the word includes words that appear within the specified ra
 have to find also the negative sampling for skip-gram generation. These are the pairs of the current word and an
 amount of words that do not appear within our specified window.
 
+#### Word Embeddings + Convolutions
+
+In notebook number five, I created a `word embeddings` together with a `convolution` layer deep learning model. Word
+embeddings are a way of representing words as dense vectors of real numbers. They are used in natural language
+processing (NLP) to encode words in a way that allows them to be used as input to machine learning models. The main
+advantage of word embeddings is that they allow us to use an efficient, dense representation in which similar words
+have a similar encoding. This makes it possible to use machine learning algorithms to analyze text data and perform
+tasks such as sentiment analysis, text classification, and machine translation.
+
+In text classification models, convolutions are used to recognize topics and relationships between words. It is a
+feature transformation that groups a set of sequential data into a convoluted, compressed data. In general,
+convolutions of one dimention takes care of neighboring words by using a filter length that implies a context window
+of words.
+
 #### Word Embeddings + LSTM
 
+In the last notebook (number six), I created a `word embeddings` together with a LSTM layer deep learning model.
 Long Short-Term Memory (LSTM) networks are a type of recurrent neural network (RNN) that are capable of learning
 long-term dependencies in sequential data. In particular, LSTM networks can be used to model the sequential nature
 of job posts and capture long-term dependencies between words.
 
 Word embeddings can then be used to represent each word as a vector in a high-dimensional space, which can help
-capture semantic relationships between words2. By combining these two techniques, it is possible to improve the
+capture semantic relationships between words. By combining these two techniques, it is possible to improve the
 accuracy of skill extraction from job posts by identifying relevant keywords and phrases that are indicative of
 specific skills. This deep learning model proved to be the best performing one compared to the previous models.

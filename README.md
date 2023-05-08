@@ -1,12 +1,12 @@
-# Skills Extractor From Job Posts
+# Skill Extraction From Job Posts
 
 ## Introduction
 
-This project is a skills extractor portfolio project that consists of a scraper for scraping job
-listings and various machine learning techniques for analyzing the descriptions. The goal of this
-project is to extract the top soft and hard skills of all job posts. This project is important
-because it can help job seekers identify the most important skills for a particular job and tailor
-their resumes accordingly.
+This project is a skills extraction application that comprises a utility class for scraping job
+posts and various machine learning techniques for in-depth analysis. The goal of the project
+is to extract the top soft and hard skills that companies ask for in their job posts. It can
+help job seekers identify the most important skills needed for the industry and tailor their
+resumes accordingly.
 
 ## Requirements and Installation
 
@@ -53,7 +53,7 @@ These should be your credentials of the LinkedIn webside, in order to use the sc
 
 1. Navigate to the "notebooks" directory: `cd notebooks`
 2. Run each desired notebook one by one
-3. Notebook number 1 contains an already successful run of the notebook. If you want to run it in
+3. Notebook number one contains an execution of the notebook. If you want to run it in
 your own machine, you have to run through the scraping process first.
 
 (Optional) If you want to rerun the analysis on your own scraped data, please run notebook
@@ -89,8 +89,8 @@ amount of words that do not appear within our specified window.
 
 #### Word Embeddings + Convolutions
 
-In notebook number five, I created a `word embeddings` together with a `convolution` layer deep learning model. Word
-embeddings are a way of representing words as dense vectors of real numbers. They are used in natural language
+In notebook number five, I created a deep learning model that contains `word embeddings` and a `convolution` layer.
+Word embeddings are a way of representing words as dense vectors of real numbers. They are used in natural language
 processing (NLP) to encode words in a way that allows them to be used as input to machine learning models. The main
 advantage of word embeddings is that they allow us to use an efficient, dense representation in which similar words
 have a similar encoding. This makes it possible to use machine learning algorithms to analyze text data and perform
@@ -103,10 +103,10 @@ of words.
 
 #### Word Embeddings + LSTM
 
-In the last notebook (number six), I created a `word embeddings` together with a LSTM layer deep learning model.
-Long Short-Term Memory (LSTM) networks are a type of recurrent neural network (RNN) that are capable of learning
-long-term dependencies in sequential data. In particular, LSTM networks can be used to model the sequential nature
-of job posts and capture long-term dependencies between words.
+In the last notebook (number six), I created a deep learning model that combines `word embeddings` with a
+`Long Short-Term Memory(LSTM)` layer. LSTM networks are a type of recurrent neural network (RNN) that are capable
+of learning long-term dependencies in sequential data. In particular, LSTM networks can be used to model the sequential
+nature of job posts and capture long-term dependencies between words.
 
 Word embeddings can then be used to represent each word as a vector in a high-dimensional space, which can help
 capture semantic relationships between words. By combining these two techniques, it is possible to improve the

@@ -20,7 +20,7 @@ class MongoDB:
         pprint(msg=f'Inserted {inserted} new documents', type=1, prefix=self.name)
 
     def find(self, query):
-        return self.jobs.find(query)
+        return self.jobs.find({}, query)
 
     def get_all_documents(self):
         return self.jobs.find({})

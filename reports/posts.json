@@ -1,0 +1,2022 @@
+[
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Information Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Financial Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist",
+            "ML Engineer"
+        ],
+        "location": "Nea Smyrni, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Telecommunications",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Nea Smyrni, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Telecommunications",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki Metropolitan Area",
+        "type": "Full-time",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Hospitals and Health Care",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist",
+            "Data Analyst"
+        ],
+        "location": "Cholargos, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Technology, Information and Internet",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Financial Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Software Development",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Marousi, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki Metropolitan Area",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Pharmaceutical Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist",
+            "Data Analyst"
+        ],
+        "location": "Khal\u00e1ndrion, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki Metropolitan Area",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Pharmaceutical Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer",
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer",
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer",
+            "ML Engineer"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Truck Transportation",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer",
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer",
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Part-time",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Pharmaceutical Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Entertainment Providers",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Software Development",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Financial Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Financial Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Director",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Banking",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Director",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Maritime Transportation",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Internet Publishing",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessalia, Greece",
+        "type": "Internship",
+        "industry": "Software Development",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Glif\u00e1dha, Attiki, Greece",
+        "type": "Full-time",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Glif\u00e1dha, Attiki, Greece",
+        "type": "Full-time",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Entertainment Providers",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Director",
+        "industry": "Semiconductors",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Financial Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Information Technology & Services",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Accounting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Marousi, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Advertising Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Patras, Western Greece, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Kryoneri, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Pharmaceutical Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Information Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Marousi, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Staffing and Recruiting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Marousi, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Telecommunications",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens Metropolitan Area",
+        "type": "Full-time",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Attiki, Greece",
+        "type": "Full-time",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Patras, Western Greece, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Professional Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Business Consulting and Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Professional Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Financial Services",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Financial Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Software Development",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Marousi, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Software Development",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Professional Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Business Consulting and Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Pharmaceutical Manufacturing"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Telecommunications",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Business Consulting and Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Insurance",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Business Consulting and Services",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Financial Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Pharmaceutical Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Marousi, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Business Consulting and Services",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Automation Machinery Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Automation Machinery Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Pharmaceutical Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Human Resources",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens Metropolitan Area",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Photography",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Entry level",
+        "industry": "Staffing and Recruiting",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Marousi, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Oil and Gas",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Food & Beverages",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "industry": "Software Development",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Technology, Information and Internet"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Associate",
+        "industry": "Technology, Information and Internet"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athens Metropolitan Area",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Piraeus, Attiki, Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki Metropolitan Area",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Patras, Western Greece, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Patras, Western Greece, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Marousi, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Gambling Facilities and Casinos",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Piraeus, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Piraeus, Attiki, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greater Larisa Area",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Greater Larisa Area",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "N\u00edkaia, Attiki, Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Kallith\u00e9a, Attiki, Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Patras, Western Greece, Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Greater Larisa Area",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Piraeus, Attiki, Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki, Central Macedonia, Greece",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Information Technology & Services",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Greater Irakleio Area",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Perist\u00e9ra, Attiki, Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Kalamari\u00e1, Central Macedonia, Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Akharna\u00ed, Attiki, Greece",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Greater Larisa Area",
+        "type": "Part-time",
+        "level": "Entry level",
+        "industry": "IT Services and IT Consulting",
+        "workplace": "Remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athens, Attiki, Greece",
+        "type": "Full-time",
+        "workplace": "Hybrid"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Thessaloniki Metropolitan Area",
+        "type": "Full-time",
+        "level": "Mid-Senior level",
+        "industry": "Pharmaceutical Manufacturing",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Marousi",
+        "type": "Full-time",
+        "level": "Senior",
+        "industry": "IT",
+        "workplace": "Part remote"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Patras",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "Part remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Patras",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "Part remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Metamorfosi",
+        "type": "Full-time",
+        "level": "Senior",
+        "industry": "Engineering",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "Call Center / Customer Support",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Entry/Junior",
+        "industry": "BI / Business Analysis",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "Other",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "BI / Business Analysis",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Senior",
+        "industry": "IT",
+        "workplace": "Part remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Senior",
+        "industry": "IT",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "Thessaloniki",
+        "type": "Full-time/Part-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "Full remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "Full remote"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "Marousi",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "Engineering",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "Kifisia",
+        "type": "Full-time",
+        "level": "Entry/Junior",
+        "industry": "IT",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "Athina",
+        "type": "Full-time",
+        "level": "Mid level",
+        "industry": "IT",
+        "workplace": "On-site"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0395\u03bb\u03bb\u03b7\u03bd\u03b9\u03ba\u03cc",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist",
+            "ML Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Scientist",
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "39.000-42.000 \u20ac \u03c4\u03bf \u03ad\u03c4\u03bf\u03c2"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0398\u03b5\u03c3\u03c3\u03b1\u03bb\u03bf\u03bd\u03af\u03ba\u03b7",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u039d\u03ad\u03b1 \u03a3\u03bc\u03cd\u03c1\u03bd\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist",
+            "ML Engineer"
+        ],
+        "location": "\u039d\u03ad\u03b1 \u03a3\u03bc\u03cd\u03c1\u03bd\u03b7"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "\u03a7\u03b1\u03bb\u03ac\u03bd\u03b4\u03c1\u03b9",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u039a\u03cd\u03c0\u03c1\u03bf\u03c2",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Analyst"
+        ],
+        "location": "\u039a\u03cd\u03c0\u03c1\u03bf\u03c2"
+    },
+    {
+        "roles": [
+            "ML Engineer",
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0398\u03b5\u03c3\u03c3\u03b1\u03bb\u03bf\u03bd\u03af\u03ba\u03b7",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Scientist"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "ML Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0398\u03b5\u03c3\u03c3\u03b1\u03bb\u03bf\u03bd\u03af\u03ba\u03b7",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u039a\u03cd\u03c0\u03c1\u03bf\u03c2",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1"
+    },
+    {
+        "roles": [
+            "Data Engineer"
+        ],
+        "location": "\u0391\u03b8\u03ae\u03bd\u03b1",
+        "type": "\u03a0\u03bb\u03ae\u03c1\u03b7\u03c2 \u03b1\u03c0\u03b1\u03c3\u03c7\u03cc\u03bb\u03b7\u03c3\u03b7"
+    }
+]

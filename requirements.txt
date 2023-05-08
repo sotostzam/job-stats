@@ -7,3 +7,5 @@ nltk==3.7
 notebook==6.5.2
 seaborn==0.12.1
 spacy==3.4.4
+tensorflow==2.11.0
+tqdm==4.64.1
